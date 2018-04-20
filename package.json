@@ -1,0 +1,37 @@
+{
+  "name": "seguir-kinesis",
+  "version": "1.0.0",
+  "description": "Kinesis plugin for seguir log tailer.",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "npm pack | xargs npm install -g"
+  },
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexandermjames/seguir-kinesis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexandermjames/seguir-kinesis/issues",
+    "email": "matt.j.alexander@utah.edu"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.178.0",
+    "uuid": "^3.2.1",
+    "bunyan": "^1.8.12"
+  },
+  "keywords": [
+    "aws",
+    "kinesis",
+    "seguir",
+    "cloud",
+    "logging",
+    "tail",
+    "log"
+  ],
+  "author": "Matt Alexander <matt.j.alexander@utah.edu>",
+  "license": "MIT",
+  "pkg": {
+    "scripts": "lib/**/*.js"
+  }
+}

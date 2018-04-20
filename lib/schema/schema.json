@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SeguirKinesisConfiguration",
+  "description": "Seguir Kinesis configuration.",
+  "type": "object",
+  "properties": {
+    "kinesis": {
+      "type": "object",
+      "properties": {
+        "endpoint": {
+          "type": "string",
+          "format": "uri"
+        },
+        "accessKeyId": {
+          "type": "string"
+        },
+        "secretAccessKey": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string",
+          "pattern": "^((?:[a-z]+-){1,2}[0-9]{1})$"
+        },
+        "sslEnabled": {
+          "type": "boolean"
+        }
+      }
+    },
+    "streams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "streamName": {
+            "type": "string"
+          },
+          "maxRecords": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 500
+          },
+          "maxBytes": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5242880
+          },
+          "msFlushRate": {
+            "type": "number",
+            "minimum": 1000
+          },
+          "maxRetries": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "partitionKey": {
+            "type": "string"
+          },
+          "partitionKeyProperty": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "streamName"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
